@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @song.name %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @song.rating %>
+   <% @song.rating.to_i.times do %>
+     <span class="glyphicon glyphicon-star"></span>
+    <% end %>
+    <% (10 - @song.rating.to_i).times do%>
+    <span class="glyphicon glyphicon-star-empty"></span>
+    <% end %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @song.artist_id %>
+</p>
+
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back', songs_path %>
